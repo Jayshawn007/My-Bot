@@ -1,3 +1,12 @@
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => res.send("Bot is running!"));
+
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
 const { Client, GatewayIntentBits, PermissionFlagsBits, EmbedBuilder, ChannelType } = require('discord.js');
 const fs = require('fs');
 
@@ -10,6 +19,7 @@ const client = new Client({
     GatewayIntentBits.GuildModeration
   ]
 });
+
 
 const PREFIX = '!';
 const WELCOME_CHANNEL_ID = '1443975778533376020';
